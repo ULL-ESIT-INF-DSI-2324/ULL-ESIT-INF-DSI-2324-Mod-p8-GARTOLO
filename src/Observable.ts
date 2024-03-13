@@ -32,7 +32,7 @@ export class Observable<T> implements IObservable<T> {
    */
   subscribe(observer: IObserver<T>) {
     if (this.observers.includes(observer)) {
-      throw new Error('The observer had already been subscribed');
+      throw new Error("The observer had already been subscribed");
     } else {
       this.observers.push(observer);
     }
@@ -45,7 +45,7 @@ export class Observable<T> implements IObservable<T> {
   unsubscribe(observer: IObserver<T>) {
     const index = this.observers.indexOf(observer);
     if (index === -1) {
-      throw new Error('The observer has not been subscribed');
+      throw new Error("The observer has not been subscribed");
     } else {
       this.observers.splice(index, 1);
     }
